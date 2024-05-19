@@ -1,0 +1,11 @@
+!include https://raw.githubusercontent.com/mbirko/C4-PlantUML-Activation/master/C4_Sequence.puml
+!include https://raw.githubusercontent.com/mbirko/PlantUML_C4_extension/main/lib.puml
+!unquoted procedure Sync($from, $to, $description="",$activation="")
+    Rel($from, $to, $description, $rel="->", $activation=$activation)
+!endprocedure
+!unquoted procedure Async($from, $to, $description="",$activation="")
+    Rel($from, $to, $description, $rel="->>", $activation=$activation)
+!endprocedure
+!unquoted procedure Response($from, $to, $description="", $activation="")
+    Rel($from, $to, $description, $rel="-->>", $activation=$activation)
+!endprocedure

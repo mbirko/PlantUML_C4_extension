@@ -1,0 +1,2 @@
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include https://raw.githubusercontent.com/mbirko/PlantUML_C4_extension/main/lib.puml

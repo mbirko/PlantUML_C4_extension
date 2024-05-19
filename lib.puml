@@ -1,7 +1,3 @@
-!include https://raw.githubusercontent.com/mbirko/C4-PlantUML-Activation/master/C4_Sequence.puml
-
-LAYOUT_WITH_LEGEND()
-SHOW_ELEMENT_DESCRIPTIONS(true)
 AddBoundaryTag("module", $legendText="Module Boundary", $bgColor="#ffffff", $borderColor="#A3C4F3")
 AddBoundaryTag("component_boundary", $legendText="component Boundary", $bgColor="#FFFFFF", $borderColor="#A3C4F3")
 AddElementTag("module", $legendText="Module", $bgColor="#A3C4F3")
@@ -43,13 +39,4 @@ AddElementTag("inpure", $legendText="Inpure Function", $bgColor="#FDE4CF")
 
 !unquoted procedure Union($alias, $label, $description="")
     Component($alias, $label, "Discriminate Union", $description, $tags="union+type")
-!endprocedure
-!unquoted procedure Sync($from, $to, $description="",$activation="")
-    Rel($from, $to, $description, $rel="->", $activation=$activation)
-!endprocedure
-!unquoted procedure Async($from, $to, $description="",$activation="")
-    Rel($from, $to, $description, $rel="->>", $activation=$activation)
-!endprocedure
-!unquoted procedure Response($from, $to, $description="", $activation="")
-    Rel($from, $to, $description, $rel="-->>", $activation=$activation)
 !endprocedure
