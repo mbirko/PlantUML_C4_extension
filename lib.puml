@@ -1,0 +1,55 @@
+!include https://raw.githubusercontent.com/mbirko/C4-PlantUML-Activation/master/C4_Sequence.puml
+
+LAYOUT_WITH_LEGEND()
+SHOW_ELEMENT_DESCRIPTIONS(true)
+AddBoundaryTag("module", $legendText="Module Boundary", $bgColor="#ffffff", $borderColor="#A3C4F3")
+AddBoundaryTag("component_boundary", $legendText="component Boundary", $bgColor="#FFFFFF", $borderColor="#A3C4F3")
+AddElementTag("module", $legendText="Module", $bgColor="#A3C4F3")
+AddElementTag("type", $legendText="type", $bgColor="#FBF8CC")
+AddElementTag("function", $legendText="type", $bgColor="#90DBF4")
+AddElementTag("pure",   $legendText="Pure Function",   $bgColor="#B9FBC0")
+AddElementTag("inpure", $legendText="Inpure Function", $bgColor="#FDE4CF")
+
+!unquoted procedure Module_Boundary($alias, $label)
+    Boundary($alias, $label, "Module", $tags="module")
+!endprocedure
+
+!unquoted procedure Component_Boundary($alias, $label)
+    Boundary($alias, $label, "Component", $tags="component_boundary")
+!endprocedure
+
+!unquoted procedure Module($alias, $label, $description="")
+    Component($alias, $label, "Module", $description, $tags="module")
+!endprocedure
+
+!unquoted procedure Function($alias, $label, $description="")
+    Component($alias, $label, "Function", $description, $tags="function")
+!endprocedure
+
+!unquoted procedure Pure($alias, $label, $description="")
+    Component($alias, $label, "Pure Function", $description, $tags="pure+function")
+!endprocedure
+
+!unquoted procedure Inpure($alias, $label, $description="")
+    Component($alias, $label, "Inpure Function", $description, $tags="inpure+function")
+!endprocedure
+
+!unquoted procedure Type($alias, $label, $description="")
+    Component($alias, $label, "Type", $description, $tags="type")
+!endprocedure
+!unquoted procedure Record($alias, $label, $description="")
+    Component($alias, $label, "Record", $description, $tags="record+type")
+!endprocedure
+
+!unquoted procedure Union($alias, $label, $description="")
+    Component($alias, $label, "Discriminate Union", $description, $tags="union+type")
+!endprocedure
+!unquoted procedure Sync($from, $to, $description="",$activation="")
+    Rel($from, $to, $description, $rel="->", $activation=$activation)
+!endprocedure
+!unquoted procedure Async($from, $to, $description="",$activation="")
+    Rel($from, $to, $description, $rel="->>", $activation=$activation)
+!endprocedure
+!unquoted procedure Response($from, $to, $description="", $activation="")
+    Rel($from, $to, $description, $rel="-->>", $activation=$activation)
+!endprocedure
