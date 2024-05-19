@@ -4,7 +4,7 @@ AddElementTag("module", $legendText="Module", $bgColor="#A3C4F3")
 AddElementTag("type", $legendText="type", $bgColor="#FBF8CC")
 AddElementTag("function", $legendText="type", $bgColor="#90DBF4")
 AddElementTag("pure",   $legendText="Pure Function",   $bgColor="#B9FBC0")
-AddElementTag("inpure", $legendText="Inpure Function", $bgColor="#FDE4CF")
+AddElementTag("impure", $legendText="Impure Function", $bgColor="#FDE4CF")
 
 !unquoted procedure Module_Boundary($alias, $label)
     Boundary($alias, $label, "Module", $tags="module")
@@ -26,8 +26,8 @@ AddElementTag("inpure", $legendText="Inpure Function", $bgColor="#FDE4CF")
     Component($alias, $label, "Pure Function", $description, $tags="pure+function")
 !endprocedure
 
-!unquoted procedure Inpure($alias, $label, $description="")
-    Component($alias, $label, "Inpure Function", $description, $tags="inpure+function")
+!unquoted procedure Impure($alias, $label, $description="")
+    Component($alias, $label, "Impure Function", $description, $tags="impure+function")
 !endprocedure
 
 !unquoted procedure Type($alias, $label, $description="")
